@@ -1,40 +1,41 @@
 #include<iostream>
 using namespace std;
 
-struct node
+struct node //node structure
 {
-    int data;
-    struct node *next;
+    int data; //data part
+    struct node *next; //pointer part
 };
 
-void traversal(struct node *ptr)
+void traversal(struct node *ptr) //function to traverse list
 {
-    while(ptr != NULL)
+    while(ptr != NULL) //values will be printing until ptr is not null/on last node
     {
-        cout<<"Element: "<<ptr->data<<endl;
-        ptr=ptr->next;
+        cout<<"Element: "<<ptr->data<<endl; //printing data
+        ptr=ptr->next; //moving to next node
     }
 }
 
 int main()
 {
     
-    struct node *head;
-    struct node *second;
-    struct node *third;
-    head = (struct node*)malloc(sizeof(struct node));
-    second = (struct node*)malloc(sizeof(struct node));
-    third = (struct node*)malloc(sizeof(struct node));
+    struct node *head; //head pointer
+    struct node *second; //second pointer
+    struct node *third; //third pointer
 
-    head->data = 1;
-    head->next = second;
+    head = (struct node*)malloc(sizeof(struct node)); //allocating memory to head pointer
+    second = (struct node*)malloc(sizeof(struct node)); //allocating memory to second pointer
+    third = (struct node*)malloc(sizeof(struct node)); //allocating memory to third pointer
 
-    second->data = 2;
-    second->next = third;
+    head->data = 1; //assigning data to head pointer
+    head->next = second; //assigning address of second pointer to head pointer
 
-    third->data = 3;
-    third->next = NULL;
+    second->data = 2; //assigning data to second pointer
+    second->next = third; //assigning address of third pointer to second pointer
 
-    traversal(head);
+    third->data = 3; //assigning data to third pointer
+    third->next = NULL; //this is last node so next pointer will be null
+
+    traversal(head); //calling traversal function
     return 0;
 }
