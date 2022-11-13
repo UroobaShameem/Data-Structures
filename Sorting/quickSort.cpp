@@ -16,8 +16,8 @@ int partition(int arr[], int left, int right){
             i++;
             swap(arr ,arr[i], arr[j]);   //swap the smaller element with the larger element
         }
-        swap(arr, arr[i+1], arr[right]);     //swap the pivot with the element at i+1
     }
+    swap(arr, arr[i+1], arr[right]);     //swap the pivot with the element at i+1
     return i+1;     //return the index of the pivot
 }
 
