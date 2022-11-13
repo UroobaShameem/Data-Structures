@@ -1,6 +1,12 @@
 #include<iostream>
 using namespace std;
 
+void swap(int *a, int *b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
 int partition(int arr[], int left, int right){
     int pivot = arr[right];    //pivot is the last element
     int i= left-1;     //i is the index of the smaller element
@@ -8,10 +14,10 @@ int partition(int arr[], int left, int right){
     for(int j=left; j<right; j++){      
         if(arr[j]<pivot){
             i++;
-            swap(arr[i], arr[j]);   //swap the smaller element with the larger element
+            swap(&arr[i], &arr[j]);   //swap the smaller element with the larger element
         }
     }
-    swap(arr[i+1], arr[right]);     //swap the pivot with the element at i+1
+    swap(&arr[i+1], &arr[right]);     //swap the pivot with the element at i+1
     return i+1;     //return the index of the pivot
 }
 
